@@ -10,3 +10,5 @@ x = np.split(b,nevent)
 for a in x:	print (a)
 
 #plt.plot(x[0])
+
+#hi im just practising changing things in GIT HUB
