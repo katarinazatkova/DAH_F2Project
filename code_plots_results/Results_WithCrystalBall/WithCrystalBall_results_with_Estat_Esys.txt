@@ -1,0 +1,15 @@
+
+
+Model:                              Mean       =   Value     ±   Estat     ±   Esys
+The First Peak
+Gaussian Model:                     μ          =   1.869448  ±   0.000020  ±   0.000061
+Sum-Of-Gaussians Model:             μ          =   1.869445  ±   0.000041  ±   0.000061
+Crystal Ball Model:                 μ          =   1.869504  ±   0.000019  ±   0.000061
+Sum-Of-CrystalBall-Gaussian Model:  μ          =   1.869444  ±   0.000049  ±   0.000061
+
+
+The Second Peak
+Gaussian Model:                     μ          =   1.968101  ±   0.000010  ±   0.000164
+Sum-Of-Gaussians Model:             μ          =   1.968116  ±   0.000017  ±   0.000164
+Crystal Ball Model:                 μ          =   1.968234  ±   0.000010  ±   0.000164
+Sum-Of-CrystalBall-Gaussian Model:  μ          =   1.968070  ±   0.000020  ±   0.000164
