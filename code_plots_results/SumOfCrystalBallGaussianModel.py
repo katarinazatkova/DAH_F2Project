@@ -146,7 +146,7 @@ class SumOfCrystalBallGaussianModel(object):
                 writer.writerow([mu_peak2_av, mu_peak2_err, "Sum-Of-CrystalBall-Gaussian Model"])
                 f2.close()
             """
-            
+
             print("Peak 1: μ" + "         =   " + "{0:1.6f}".format(mu_peak1_av) + "  ±   " + "{0:1.6f}".format(mu_peak1_err))
             print("Peak 2: μ" + "         =   " + "{0:1.6f}".format(mu_peak2_av) + "  ±   " + "{0:1.6f}".format(mu_peak2_err))
             print("\n")
@@ -182,7 +182,7 @@ class SumOfCrystalBallGaussianModel(object):
         residuals = np.subtract(counts[0],y)
         
         plt.plot(x,residuals)
-        plt.title("Residuals from the Sum-Of-Gaussians Model")
+        plt.title("Residuals from the Sum-Of-CrystalBall-Gaussian Model")
         plt.xlabel("Mass [GeV]")
         plt.ylabel("Residuals")
         plt.savefig("SumOfCrystalBallGaussianModel/residuals.png")
