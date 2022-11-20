@@ -16,6 +16,7 @@ import numpy as np
 from iminuit import Minuit
 from iminuit.cost import UnbinnedNLL
 from scipy.stats import crystalball
+import csv
 
 
 class CrystalBallModel(object):
@@ -78,7 +79,7 @@ class CrystalBallModel(object):
 
         if plotprintval == True:
             # printing the best fit parameters with their statistical errors in a file
-            with open('GaussianModel/Part3/fitparams.txt', 'w') as f:
+            with open('CrystalBallModel/fitparams.txt', 'w') as f:
                 print("\n", file=f)
                 print("The determined best fit parameters with the statistical errors from the Crystal Ball model fit are: \n", file=f)
                 print("Parameter  =   Value     ±   Estat", file=f)
@@ -103,6 +104,26 @@ class CrystalBallModel(object):
             print(str(params[4]) + "          =   " + "{0:1.3f}".format(vals[4]) + "     ±   " + "{0:1.3f}".format(staterrors[4]))
             print("f1" + "         =   " + "{0:1.5f}".format(vals[5]) + "   ±   " + "{0:1.5f}".format(staterrors[5]))
             print("f2" + "         =   " + "{0:1.5f}".format(vals[6]) + "   ±   " + "{0:1.5f}".format(staterrors[6]))
+            print("\n")
+
+            """
+            with open('mu1_allmodels.csv', 'a') as f1:
+                mu1_val = vals[0]
+                mu1_err = staterrors[0]
+                writer = csv.writer(f1, delimiter='\t')
+                writer.writerow([mu1_val, mu1_err, "Crystal Ball Model"])
+                f1.close()
+            
+            with open('mu2_allmodels.csv', 'a') as f2:
+                mu2_val = vals[2]
+                mu2_err = staterrors[2]
+                writer = csv.writer(f2, delimiter='\t')
+                writer.writerow([mu2_val, mu2_err, "Crystal Ball Model"])
+                f2.close()
+            """
+            
+            print("Peak 1: μ" + "         =   " + "{0:1.6f}".format(vals[0]) + "  ±   " + "{0:1.6f}".format(staterrors[0]))
+            print("Peak 2: μ" + "         =   " + "{0:1.6f}".format(vals[2]) + "  ±   " + "{0:1.6f}".format(staterrors[2]))
             print("\n")
             
             xfit = np.linspace(self.xmass_min, self.xmass_max, 10000)
