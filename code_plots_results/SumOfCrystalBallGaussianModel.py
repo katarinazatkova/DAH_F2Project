@@ -18,6 +18,8 @@ from iminuit import Minuit
 from iminuit.cost import UnbinnedNLL
 from scipy.stats import crystalball
 import scipy.integrate as integrate
+import csv
+
 
 class SumOfCrystalBallGaussianModel(object):
 
@@ -126,6 +128,27 @@ class SumOfCrystalBallGaussianModel(object):
             print(str(params[8]) + "          =   " + "{0:1.4f}".format(vals[8]) + "    ±   " + "{0:1.4f}".format(staterrors[8]))
             print("f1" + "         =   " + "{0:1.5f}".format(vals[9]) + "   ±   " + "{0:1.5f}".format(staterrors[9]))
             print("f2" + "         =   " + "{0:1.5f}".format(vals[10]) + "   ±   " + "{0:1.5f}".format(staterrors[10]))
+            print("\n")
+
+            mu_peak1_av = np.mean([vals[0], vals[2]])
+            mu_peak2_av = np.mean([vals[4], vals[6]])
+            mu_peak1_err = np.sqrt(staterrors[0]**2 + staterrors[2]**2)/2
+            mu_peak2_err = np.sqrt(staterrors[4]**2 + staterrors[6]**2)/2
+
+            """
+            with open('mu1_allmodels.csv', 'a') as f1:
+                writer = csv.writer(f1, delimiter='\t')
+                writer.writerow([mu_peak1_av, mu_peak1_err, "Sum-Of-CrystalBall-Gaussian Model"])
+                f1.close()
+            
+            with open('mu2_allmodels.csv', 'a') as f2:
+                writer = csv.writer(f2, delimiter='\t')
+                writer.writerow([mu_peak2_av, mu_peak2_err, "Sum-Of-CrystalBall-Gaussian Model"])
+                f2.close()
+            """
+            
+            print("Peak 1: μ" + "         =   " + "{0:1.6f}".format(mu_peak1_av) + "  ±   " + "{0:1.6f}".format(mu_peak1_err))
+            print("Peak 2: μ" + "         =   " + "{0:1.6f}".format(mu_peak2_av) + "  ±   " + "{0:1.6f}".format(mu_peak2_err))
             print("\n")
             
             xfit = np.linspace(self.xmass_min, self.xmass_max, 10000)
