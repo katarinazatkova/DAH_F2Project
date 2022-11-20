@@ -1,4 +1,4 @@
-# GaussianModel.py
+# calc_differences.py
 # code developed by Katarina Zatkova, Una Alberti
 # part of the DAH F2 Project: Make Accurate Measurements of Particle Masses
 
