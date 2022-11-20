@@ -1,0 +1,14 @@
+
+
+The determined best fit parameters with the statistical errors from the Gaussian model fit are: 
+
+Parameter  =   Value     ±   Estat
+μ1         =   1.869448  ±   0.000020
+σ1         =   0.005642  ±   0.000018
+μ2         =   1.968101  ±   0.000010
+σ2         =   0.0063134 ±   0.0000087
+A          =   0.5103    ±   0.0073
+f1         =   0.14672   ±   0.00045
+f2         =   0.53692   ±   0.00059
+
+
