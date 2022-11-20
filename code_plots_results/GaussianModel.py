@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from iminuit import Minuit
 from iminuit.cost import UnbinnedNLL
+import csv
 
 
 class GaussianModel(object):
@@ -212,7 +213,7 @@ class GaussianModel(object):
                 print("f2" + "         =   " + "{0:1.5f}".format(vals[6]) + "   ±   " + "{0:1.5f}".format(staterrors[6]), file=f)
                 print("\n", file=f)
                 f.close()
-            
+
             # printing the best fit parameters with their statistical errors in terminal window
             print("\n")
             print(f"The determined best fit parameters with the statistical errors from the Gaussian model fit are: \n")
@@ -225,13 +226,33 @@ class GaussianModel(object):
             print("f1" + "         =   " + "{0:1.5f}".format(vals[5]) + "   ±   " + "{0:1.5f}".format(staterrors[5]))
             print("f2" + "         =   " + "{0:1.5f}".format(vals[6]) + "   ±   " + "{0:1.5f}".format(staterrors[6]))
             print("\n")
+
+            """
+            with open('mu1_allmodels.csv', 'w') as f1:
+                mu1_val = vals[0]
+                mu1_err = staterrors[0]
+                writer = csv.writer(f1, delimiter='\t')
+                writer.writerow([mu1_val, mu1_err, "Gaussian Model"])
+                f1.close()
+            
+            with open('mu2_allmodels.csv', 'w') as f2:
+                mu2_val = vals[2]
+                mu2_err = staterrors[2]
+                writer = csv.writer(f2, delimiter='\t')
+                writer.writerow([mu2_val, mu2_err, "Gaussian Model"])
+                f2.close()
+            """
+            
+            print("Peak 1: μ" + "         =   " + "{0:1.6f}".format(vals[0]) + "  ±   " + "{0:1.6f}".format(staterrors[0]))
+            print("Peak 2: μ" + "         =   " + "{0:1.6f}".format(vals[2]) + "  ±   " + "{0:1.6f}".format(staterrors[2]))
+            print("\n")
             
             xfit = np.linspace(self.xmass_min, self.xmass_max, 10000)
             yfit = composite_pdf_part3(xfit, mu_1 = vals["mu_1"], sigma_1 = vals["sigma_1"], mu_2 = vals["mu_2"], sigma_2 = vals["sigma_2"], A = vals["A"], f_1 = vals["f_1"], f_2 = vals["f_2"])
 
             # plotting histogram with the fit 
             plot_histogram_withfit(self.xmass, xfit, yfit, "Histogram of the full scale mass distribution with the fitted signal", "fullscale_masshist_withfit")
-
+            
         else:
             return (composite_pdf_part3, vals)
     
