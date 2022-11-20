@@ -1,0 +1,13 @@
+1	 	-	 	G	a	u	s	s	i	a	n	 	M	o	d	e	l
+2	 	-	 	S	u	m	-	O	f	-	G	a	u	s	s	i	a	n	s	 	M	o	d	e	l
+3	 	-	 	C	r	y	s	t	a	l	 	B	a	l	l	 	M	o	d	e	l
+4	 	-	 	S	u	m	-	O	f	-	C	r	y	s	t	a	l	B	a	l	l	-	G	a	u	s	s	i	a	n	 	M	o	d	e	l
+0.0	1	1
+2.718358018238831e-06	1	2
+3.7843956024463665e-06	1	4
+2.718358018238831e-06	2	1
+0.0	2	2
+1.0660375842075354e-06	2	4
+3.7843956024463665e-06	4	1
+1.0660375842075354e-06	4	2
+0.0	4	4
