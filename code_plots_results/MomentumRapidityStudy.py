@@ -152,7 +152,7 @@ class MomentumRapidityStudy(object):
         plt.xlabel('p⊥ Region')
         plt.legend()
         plt.grid(True)
-        plt.savefig("MomentumRapidityStudy/plot_D0sigma_vs_momentum.png")
+        plt.savefig("MomentumRapidityStudy/plot_sigma_vs_momentum.png")
         plt.show()
 
 
@@ -231,5 +231,5 @@ class MomentumRapidityStudy(object):
         plt.xlabel('η Region')
         plt.legend()
         plt.grid(True)
-        plt.savefig("MomentumRapidityStudy/plot_D0sigma_vs_rapidity.png")
+        plt.savefig("MomentumRapidityStudy/plot_sigma_vs_rapidity.png")
         plt.show()
