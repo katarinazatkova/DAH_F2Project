@@ -67,8 +67,8 @@ class MomentumRapidityStudy(object):
 
         mu_peak1_errsys = 0.0000038
         mu_peak2_errsys = 0.000046
-        sigma_peak1_errsys = 0.000604
-        sigma_peak2_errsys = 0.00042
+        sigma_peak1_errsys = 0.000635
+        sigma_peak2_errsys = 0.000746
 
         mu_peak1_err = np.sqrt(mu_peak1_errstat**2 + mu_peak1_errsys**2)
         mu_peak2_err = np.sqrt(mu_peak2_errstat**2 + mu_peak2_errsys**2)
