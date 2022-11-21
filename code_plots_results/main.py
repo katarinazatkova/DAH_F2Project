@@ -1,3 +1,7 @@
+# main.py
+# code developed by Katarina Zatkova, Una Alberti
+# part of the DAH F2 Project: Make Accurate Measurements of Particle Masses
+
 # Imports
 import sys
 import numpy as np
@@ -5,6 +9,7 @@ from GaussianModel import GaussianModel
 from SumOfGaussiansModel import SumOfGaussiansModel
 from CrystalBallModel import CrystalBallModel
 from SumOfCrystalBallGaussianModel import SumOfCrystalBallGaussianModel
+from MomentumRapidityStudy import MomentumRapidityStudy
 
 # Main entry point of the program
 if __name__ == "__main__":
@@ -20,8 +25,12 @@ if __name__ == "__main__":
     xdata = np.split(b, nevent)
     # make list of invariant mass of events
     xmass = []
+    momentum = []
+    rapidity = []
     for i in range(0, len(xdata)):
         xmass.append(xdata[i][0]/1000)
+        momentum.append((xdata[i][2])/1000)
+        rapidity.append((xdata[i][3]))
 
     if (len(args) == 3):
         
@@ -52,6 +61,7 @@ if __name__ == "__main__":
                 To display the histogram with the fit and the residuals plot, together with the best fit parameters, for either of the models 
                 provide their name as an input.
                 \n 
+                A study on how the mass and the width of the peak (the resolution) depends on the transverse momentum (p⊥) and rapidity (η) was also conducted."
                 """
                 print(txt)
 
@@ -88,14 +98,20 @@ if __name__ == "__main__":
             sum_of_crystalballgaussian.fit(True)
             sum_of_crystalballgaussian.get_residuals()
         
+        elif model == "Other":
+            pt_rapidity = MomentumRapidityStudy(xmass, momentum, rapidity)
+            pt_rapidity.plot_mass_vs_momentum()
+            pt_rapidity.plot_mass_vs_rapidity()
+        
         else:
             print("There are only 4 implemented models. Please choose between 'Gaussian', 'SumOfGaussians', 'CrystalBall' and 'SumOfCrystalBallGaussian'.\n")
             print("For the Gaussian model you can also choose a specific part of the project, e.g. 'python3 main.py Gaussian 2' would show Gaussian Model, 2nd part.")
 
     else:
         print("\n")
-        print ("Usage: python3 main.py Model Part_number \n")
+        print ("Usage: python3 main.py Model/Other Part_number \n")
         print("There are 4 implemented models. Please choose between 'Gaussian', 'SumOfGaussians', 'CrystalBall' and 'SumOfCrystalBallGaussian'.\n")
         print("For the Gaussian model you can also choose a specific part of the project, e.g. 'python3 main.py Gaussian 2' would shows Gaussian Model, 2nd part. \n")
+        print("Choose Model=Other to see a further study on how the mass and the width of the peak (the resolution) depends on the transverse momentum (p⊥) and rapidity (η).")
 
         sys.exit()
