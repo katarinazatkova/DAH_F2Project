@@ -48,7 +48,7 @@ Files structure:
 
     main.py  - the core program that uses GaussianModel, SumOfGaussiansModel, CrystalBallModel, SumOfCrystalBallGaussianModel and MomentumRapidityStudy     classes and is used to perform the analysis.
 
-            It prompts the user to input:   Model(str) - There are models to choose from:   'GaussianModel'
+            It prompts the user to input:   Model(str) - There are 4 models to choose from:   'GaussianModel'
                                                                 `                           'SumOfGaussiansModel' 
                                                                                             'CrystalBallModel' 
                                                                                             'SumOfCrystalBallGaussianModel' 
