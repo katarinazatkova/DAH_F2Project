@@ -109,9 +109,9 @@ if __name__ == "__main__":
 
     else:
         print("\n")
-        print ("Usage: python3 main.py Model/Other Part_number \n")
+        print ("Usage: python3 main.py Model Part_number \n")
         print("There are 4 implemented models. Please choose between 'Gaussian', 'SumOfGaussians', 'CrystalBall' and 'SumOfCrystalBallGaussian'.\n")
         print("For the Gaussian model you can also choose a specific part of the project, e.g. 'python3 main.py Gaussian 2' would shows Gaussian Model, 2nd part. \n")
-        print("Choose Model=Other to see a further study on how the mass and the width of the peak (the resolution) depends on the transverse momentum (p⊥) and rapidity (η).")
+        print("Choose Model = Other to see a further study on how the mass and the width of the peak (the resolution) depends on the transverse momentum (p⊥) and rapidity (η).")
 
         sys.exit()
