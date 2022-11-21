@@ -23,6 +23,7 @@ The environment that was used:
 
 channels:
   - conda-forge
+
 dependencies:
   - python=3.9
   - matplotlib
