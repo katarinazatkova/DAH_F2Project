@@ -67,8 +67,8 @@ class MomentumRapidityStudy(object):
 
         mu_peak1_errsys = 0.0000038
         mu_peak2_errsys = 0.000046
-        sigma_peak1_errsys = 0.000635
-        sigma_peak2_errsys = 0.000746
+        sigma_peak1_errsys = 0.000646
+        sigma_peak2_errsys = 0.0004327
 
         mu_peak1_err = np.sqrt(mu_peak1_errstat**2 + mu_peak1_errsys**2)
         mu_peak2_err = np.sqrt(mu_peak2_errstat**2 + mu_peak2_errsys**2)
@@ -123,6 +123,8 @@ class MomentumRapidityStudy(object):
         m2 = [mu2_1, mu2_2, mu2_3]
         m1_err = [mu1_err1, mu1_err2, mu1_err3]
         m2_err = [mu2_err1, mu2_err2, mu2_err3]
+        m2_m1 = np.asarray(m2)-np.asarray(m1)
+        m2_m1_err = np.sqrt(np.asarray(m2_err)**2 + np.asarray(m1_err)**2)
         
         s1 = [sigma1_1, sigma1_2, sigma1_3]
         s2 = [sigma2_1, sigma2_2, sigma2_3]
@@ -143,6 +145,14 @@ class MomentumRapidityStudy(object):
         plt.xlabel('p⊥ Region')
         plt.grid(True)
         plt.savefig("MomentumRapidityStudy/plot_D0mass_vs_momentum.png")
+        plt.show()
+
+        plt.errorbar(region_n, m2_m1, yerr = m2_m1_err, fmt="o", barsabove=True, capsize=10)
+        plt.title('Mass difference between D0 and D+(s) in 3 (p⊥) Momentum Regions ')
+        plt.ylabel('$M_{D0}$-$M_{D+(s)}$ [Gev]')
+        plt.xlabel('p⊥ Region')
+        plt.grid(True)
+        plt.savefig("MomentumRapidityStudy/plot_massdiff_vs_momentum.png")
         plt.show()
 
         plt.errorbar(region_n, s1, yerr=s1_err, fmt="o", barsabove=True,label='D+(s)',markersize = 4, capsize=10)
@@ -202,6 +212,8 @@ class MomentumRapidityStudy(object):
         m2 = [mu2_1, mu2_2, mu2_3, mu2_4]
         m1_err = [mu1_err1, mu1_err2, mu1_err3, mu1_err4]
         m2_err = [mu2_err1, mu2_err2, mu2_err3, mu2_err4]
+        m2_m1 = np.asarray(m2)-np.asarray(m1)
+        m2_m1_err = np.sqrt(np.asarray(m2_err)**2 + np.asarray(m1_err)**2)
         
         s1 = [sigma1_1, sigma1_2, sigma1_3, sigma1_4]
         s2 = [sigma2_1, sigma2_2, sigma2_3, sigma2_4]
@@ -222,6 +234,14 @@ class MomentumRapidityStudy(object):
         plt.xlabel('η Region')
         plt.grid(True)
         plt.savefig("MomentumRapidityStudy/plot_D0mass_vs_rapidity.png")
+        plt.show()
+
+        plt.errorbar(region_n, m2_m1, yerr = m2_m1_err, fmt="o", barsabove=True, capsize=10)
+        plt.title('Mass difference between D0 and D+(s) in 4 Rapidity (η) Regions')
+        plt.ylabel('$M_{D0}$-$M_{D+(s)}$ [Gev]')
+        plt.xlabel('η Region')
+        plt.grid(True)
+        plt.savefig("MomentumRapidityStudy/plot_massdiff_vs_rapidity.png")
         plt.show()
 
         plt.errorbar(region_n, s1, yerr=s1_err, fmt="o", barsabove=True,label='D+(s)',markersize = 4, capsize=10)
