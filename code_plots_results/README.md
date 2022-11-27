@@ -98,12 +98,12 @@ Files structure:
                                         WithCrystalBall_mu2_differences.csv
                                         WithCrystalBall_results_with_Estat_Esys.txt
     
-    MomentumRapidityStudy(folder):      plot_D0mass_vs_momentum.png - mass vs momentum plot for D0
-                                        plot_D0mass_vs_rapidity.png - mass vs rapidity plot for D0
-                                        plot_sigma_vs_momentum.png - width of the D0 and D+ peak vs momentum plot
-                                        plot_sigma_vs_rapidity.png - width of the D0 and D+ peak vs rapidity plot
-                                        plot_D+mass_vs_momentum.png - mass vs momentum plot for D+
+    MomentumRapidityStudy(folder):      plot_D+mass_vs_momentum.png - mass vs momentum plot for D+
                                         plot_D+mass_vs_rapidity.png - mass vs rapidity plot for D+
+                                        plot_sigma_vs_momentum.png - width of the D+ and D+s peak vs momentum plot
+                                        plot_sigma_vs_rapidity.png - width of the D+ and D+s peak vs rapidity plot
+                                        plot_D+smass_vs_momentum.png - mass vs momentum plot for D+s
+                                        plot_D+smass_vs_rapidity.png - mass vs rapidity plot for D+s
 
     GaussianModel.py:                   Gaussian model Class with 4 parts (4 main scope assignment parts)
     SumOfGaussiansModel.py:             Sum of Gaussians Model Class - outputs files in its respective folder (mentioned above)
