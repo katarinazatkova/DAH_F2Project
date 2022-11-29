@@ -144,7 +144,16 @@ class GaussianModel(object):
         print(str(params[2]) + "          =   " + "{0:1.3f}".format(vals[2]) + "     ±   " + "{0:1.3f}".format(staterrors[2]))
         print(str(params[3]) + "          =   " + "{0:1.4f}".format(vals[3]) + "    ±   " + "{0:1.4f}".format(staterrors[3]))
         print("\n")
-
+        
+        #calculating the yield
+        counts, edges, _ = plt.hist(self.xmass_dplus, bins = 100, color='orange')
+        plt.close()
+        for i in range(len(edges)):
+            if (edges[i] > vals[0]) and (edges[i-1] < vals[0]):
+                yield_val = counts[i-1]
+                yield_err = ((counts[i-2]/2) + (counts[i]/2))/2
+                print("The signal yield for the D+ meson is " + str(int(yield_val)) + " ± " + str(int(yield_err)) +".")
+                
         xfit = np.linspace(self.xmass_min, self.xmass_max, 10000)
         yfit = composite_pdf_part1(xfit, mu = vals["mu"], sigma = vals["sigma"], A = vals["A"], f = vals["f"])
 
