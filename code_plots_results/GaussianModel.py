@@ -144,7 +144,13 @@ class GaussianModel(object):
         print(str(params[2]) + "          =   " + "{0:1.3f}".format(vals[2]) + "     ±   " + "{0:1.3f}".format(staterrors[2]))
         print(str(params[3]) + "          =   " + "{0:1.4f}".format(vals[3]) + "    ±   " + "{0:1.4f}".format(staterrors[3]))
         print("\n")
-                        
+        
+        #calculating the yield
+        print("The number of events in the entire mass range is " +str(len(self.xmass)) + ".")
+        print("The number of events in the (cut) D+ meson mass range is " +str(len(self.xmass_dplus))+ ".")
+        print ("The signal yield for the D+ meson is " + str(int((1-vals[3])*len(self.xmass_dplus))) + " ± " + str(int(staterrors[3]*len(self.xmass_dplus)))+ ".")
+        print("\n") 
+        
         xfit = np.linspace(self.xmass_min, self.xmass_max, 10000)
         yfit = composite_pdf_part1(xfit, mu = vals["mu"], sigma = vals["sigma"], A = vals["A"], f = vals["f"])
 
