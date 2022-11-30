@@ -145,7 +145,7 @@ class GaussianModel(object):
         print(str(params[3]) + "          =   " + "{0:1.4f}".format(vals[3]) + "    ±   " + "{0:1.4f}".format(staterrors[3]))
         print("\n")
         
-        #calculating the yield
+        # printing the yield
         print("The number of events in the entire mass range is " +str(len(self.xmass)) + ".")
         print("The number of events in the (cut) D+ meson mass range is " +str(len(self.xmass_dplus))+ ".")
         print ("The signal yield for the D+ meson is " + str(int((1-vals[3])*len(self.xmass_dplus))) + " ± " + str(int(staterrors[3]*len(self.xmass_dplus)))+ ".")
